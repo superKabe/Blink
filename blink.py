@@ -7,10 +7,10 @@ setproctitle.setproctitle('Blink')
 
 def startNotif():
     notif.show_toast(
-        "Look in the distance and Blink",
-        "Focus on a distant object for at least 20 seconds",
+        "Look 20m in the distance",
+        "Focus on a distant object for 20 seconds and blink 20 times",
         duration = 5,
-        icon_path = "eye_icon.ico",
+        icon_path = 'build/eye_icon.ico',
         threaded = True,
     )
 
@@ -18,15 +18,15 @@ def endNotif():
         notif.show_toast(
         "Done", "Time to Refocus",
         duration = 5,
-        icon_path = "eye_icon.ico",
+        icon_path = 'build/eye_icon.ico',
         threaded = True,
     )
 
 def main():
-    sleep(30*60)
     startNotif()
-    sleep(20)
+    sleep(25)
     endNotif()
+    sleep(30*60)
     main()
 
 if __name__ == '__main__':
